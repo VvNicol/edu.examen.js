@@ -1,8 +1,8 @@
-enunciado.....
+Dada la siguiente base de datos correspondiente a los nombres y notas de un curso de tecnología de Secundaria se nos pide que como mínimo la página debe ser capaz de mostrarnos los valores correspondientes nada más iniciarse y poder seleccionar el orden en el que se muestran, alfabéticamente y por nota de mayor a menor. También se requiere incorporar funciones que permitan el filtrado de la base de datos correspondiente a aprobados, su nota es mayor o igual a 5, y suspensos, los casos restantes. 
 
+Para obtener mayor nota el filtrado debe ser constante, es decir, si después de seleccionar un filtrado se selecciona un ordenamiento se debe aplicar a ese filtrado, no al total de resultados de la base de datos inicial. 
+Para aprobar basta solamente con que realice el filtrado y al seleccionar ordenar lo realiza al total de la base de datos.
 
+NOTA: En ningún momento se nos pide editar la base de datos, es decir, el número de entradas siempre será el mismo, lo que quiere decir que si después de realizar un filtrado se desactiva debe retornar a los valores iniciales de la base de datos.
 
-
-
-
-"agregar, filtrar, calfechas"
+"filtrado"

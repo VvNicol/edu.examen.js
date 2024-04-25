@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de datos de estudiantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #base {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 50%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Base de datos de estudiantes</h1>
+    <div id="base"></div>
+    <button onclick="todos()">Mostrar todos</button>
+    <button onclick="filNota(0)">Suspensos</button>
+    <button onclick="filNota(1)">Aprobados</button>
+    <button onclick="alfabetico()">Ordenar alfabéticamente</button>
+    <button onclick="notas()">Ordenar por nota</button>
+
+    <script>
+        const baseDeDatos = [["Juanito", 7], ["Pepe", 8], ["Juan", 5], ["Manuel", 10], ["Alberto", 4], ["Igor", 2]];
+        const ruta = document.getElementById("base");
+        let baseFiltrada = baseDeDatos.concat();
+
+        function escritura(nombre) {
+            ruta.innerHTML = "";
+            nombre.forEach((valor) => ruta.innerHTML += (valor[0] + ": " + valor[1] + "<br>"));
+        }
+
+        function todos() {
+            baseFiltrada = baseDeDatos.concat();
+            escritura(baseFiltrada);
+        }
+
+        function filNota(valor) {
+            baseFiltrada = baseDeDatos.filter((numero) => {
+                if (valor == 0) {
+                    if (numero[1] < 5) {
+                        return numero
+                    }
+                } else {
+                    if (numero[1] >= 5) {
+                        return numero
+                    }
+                }
+            });
+            escritura(baseFiltrada);
+        }
+
+        function alfabetico() {
+            baseFiltrada.sort((a, b) => {
+                if (a[0] > b[0]) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            escritura(baseFiltrada);
+        }
+
+        function notas() {
+            baseFiltrada.sort((a, b) => {
+                if (a[1] < b[1]) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            escritura(baseFiltrada);
+        }
+
+        // Mostrar todos los datos al inicio
+        todos();
+    </script>
+</body>
+</html>
